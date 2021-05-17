@@ -35,7 +35,13 @@ module Administrate
     end
 
     def controller_path_parts
-      controller_path.split("/")[1..-1].map(&:singularize)
+      splitted_controller_path.map do |controller_part|
+        controller_part == splitted_controller_path.last ? controller_part.singularize : controller_part
+      end
+    end
+
+    def splitted_controller_path
+      @splitted_controller_path ||= controller_path.split('/')[1..-1]
     end
 
     attr_reader :controller_path

@@ -40,13 +40,15 @@ module Administrate
       }
     end
 
+    RouteArg = ->(value) { value.is_a?(Symbol) || !value.is_a?(String) ? value : value.to_sym }
+
     def create
       resource = resource_class.new(resource_params)
       authorize_resource(resource)
 
       if resource.save
         redirect_to(
-          [namespace, resource],
+          [namespace, resource].map(&RouteArg),
           notice: translate_with_resource("create.success"),
         )
       else
@@ -59,7 +61,7 @@ module Administrate
     def update
       if requested_resource.update(resource_params)
         redirect_to(
-          [namespace, requested_resource],
+          [namespace, requested_resource].map(&RouteArg),
           notice: translate_with_resource("update.success"),
         )
       else

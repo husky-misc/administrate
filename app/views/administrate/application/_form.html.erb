@@ -13,8 +13,10 @@ and renders all form fields for a resource's editable attributes.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
-
-<%= form_for([namespace, page.resource], html: { class: "form" }) do |f| %>
+<%
+  route_arg = ->(value) { value.is_a?(Symbol) || !value.is_a?(String) ? value : value.to_sym }
+%>
+<%= form_for([namespace, page.resource].map(&route_arg), html: { class: "form" }) do |f| %>
   <% if page.resource.errors.any? %>
     <div id="error_explanation">
       <h2>

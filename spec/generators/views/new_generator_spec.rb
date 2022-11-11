@@ -8,7 +8,7 @@ describe Administrate::Generators::Views::NewGenerator, :generator do
       expected_contents = contents_for_application_template("new")
 
       run_generator []
-      contents = File.read(file("app/views/admin/application/new.html.erb"))
+      contents = File.read(file("engines/admin/app/views/admin/application/new.html.erb"))
 
       expect(contents).to eq(expected_contents)
     end
@@ -17,7 +17,7 @@ describe Administrate::Generators::Views::NewGenerator, :generator do
       expected_contents = contents_for_application_template("_form")
 
       run_generator []
-      contents = File.read(file("app/views/admin/application/_form.html.erb"))
+      contents = File.read(file("engines/admin/app/views/admin/application/_form.html.erb"))
 
       expect(contents).to eq(expected_contents)
     end
@@ -28,7 +28,7 @@ describe Administrate::Generators::Views::NewGenerator, :generator do
       expected_contents = contents_for_application_template("new")
 
       run_generator ["users"]
-      contents = File.read(file("app/views/admin/users/new.html.erb"))
+      contents = File.read(file("engines/admin/app/views/admin/users/new.html.erb"))
 
       expect(contents).to eq(expected_contents)
     end
@@ -37,7 +37,7 @@ describe Administrate::Generators::Views::NewGenerator, :generator do
       expected_contents = contents_for_application_template("_form")
 
       run_generator ["users"]
-      contents = File.read(file("app/views/admin/users/_form.html.erb"))
+      contents = File.read(file("engines/admin/app/views/admin/users/_form.html.erb"))
 
       expect(contents).to eq(expected_contents)
     end

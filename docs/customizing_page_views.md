@@ -11,19 +11,19 @@ call the generators with no arguments.
 
 ```bash
 rails generate administrate:views:index
- # -> app/views/admin/application/index.html.erb
- # -> app/views/admin/application/_collection.html.erb
+ # -> engines/admin/app/views/admin/application/index.html.erb
+ # -> engines/admin/app/views/admin/application/_collection.html.erb
 
 rails generate administrate:views:show
- # -> app/views/admin/application/show.html.erb
+ # -> engines/admin/app/views/admin/application/show.html.erb
 
 rails generate administrate:views:edit
- # -> app/views/admin/application/edit.html.erb
- # -> app/views/admin/application/_form.html.erb
+ # -> engines/admin/app/views/admin/application/edit.html.erb
+ # -> engines/admin/app/views/admin/application/_form.html.erb
 
 rails generate administrate:views:new
- # -> app/views/admin/application/new.html.erb
- # -> app/views/admin/application/_form.html.erb
+ # -> engines/admin/app/views/admin/application/new.html.erb
+ # -> engines/admin/app/views/admin/application/_form.html.erb
 
 rails generate administrate:views
  # -> all of the above
@@ -42,19 +42,19 @@ pass in the resource name to the view generators.
 
 ```bash
 rails generate administrate:views:index User
- # -> app/views/admin/users/index.html.erb
- # -> app/views/admin/users/_collection.html.erb
+ # -> engines/admin/app/views/admin/users/index.html.erb
+ # -> engines/admin/app/views/admin/users/_collection.html.erb
 
 rails generate administrate:views:show User
- # -> app/views/admin/users/show.html.erb
+ # -> engines/admin/app/views/admin/users/show.html.erb
 
 rails generate administrate:views:edit User
- # -> app/views/admin/users/edit.html.erb
- # -> app/views/admin/users/_form.html.erb
+ # -> engines/admin/app/views/admin/users/edit.html.erb
+ # -> engines/admin/app/views/admin/users/_form.html.erb
 
 rails generate administrate:views:new User
- # -> app/views/admin/users/new.html.erb
- # -> app/views/admin/users/_form.html.erb
+ # -> engines/admin/app/views/admin/users/new.html.erb
+ # -> engines/admin/app/views/admin/users/_form.html.erb
 
 rails generate administrate:views User
  # -> all of the above
@@ -71,12 +71,12 @@ It's as easy as passing in the "layout" keyword to the view generators.
 
 ```bash
 rails generate administrate:views:layout
- # -> app/views/layouts/admin/application.html.erb
- # -> app/views/admin/application/_navigation.html.erb
- # -> app/views/admin/application/_javascript.html.erb
- # -> app/views/admin/application/_flashes.html.erb
+ # -> engines/admin/app/views/layouts/admin/application.html.erb
+ # -> engines/admin/app/views/admin/application/_navigation.html.erb
+ # -> engines/admin/app/views/admin/application/_javascript.html.erb
+ # -> engines/admin/app/views/admin/application/_flashes.html.erb
 
  rails generate administrate:views:navigation
  # It only generates the sidebar partial
- # -> app/views/admin/application/_navigation.html.erb
+ # -> engines/admin/app/views/admin/application/_navigation.html.erb
 ```

@@ -8,14 +8,14 @@ describe Administrate::Generators::Views::IndexGenerator, :generator do
       expected_contents = contents_for_application_template("index")
 
       run_generator []
-      contents = File.read(file("app/views/admin/application/index.html.erb"))
+      contents = File.read(file("engines/admin/app/views/admin/application/index.html.erb"))
 
       expect(contents).to eq(expected_contents)
     end
 
     it "copies the collection partial into the `admin/application` namespace" do
       expected_contents = contents_for_application_template("_collection")
-      generated_file = file("app/views/admin/application/_collection.html.erb")
+      generated_file = file("engines/admin/app/views/admin/application/_collection.html.erb")
 
       run_generator []
       contents = File.read(generated_file)
@@ -29,7 +29,7 @@ describe Administrate::Generators::Views::IndexGenerator, :generator do
       expected_contents = contents_for_application_template("index")
 
       run_generator ["users"]
-      contents = File.read(file("app/views/admin/users/index.html.erb"))
+      contents = File.read(file("engines/admin/app/views/admin/users/index.html.erb"))
 
       expect(contents).to eq(expected_contents)
     end
@@ -38,7 +38,7 @@ describe Administrate::Generators::Views::IndexGenerator, :generator do
       expected_contents = contents_for_application_template("_collection")
 
       run_generator ["users"]
-      contents = File.read(file("app/views/admin/users/_collection.html.erb"))
+      contents = File.read(file("engines/admin/app/views/admin/users/_collection.html.erb"))
 
       expect(contents).to eq(expected_contents)
     end

@@ -3,7 +3,7 @@ search:
     - "app/controllers"
     - "app/helpers"
     - "app/pages"
-    - "app/views"
+    - "engines/admin/app/views"
 
 data:
   read:

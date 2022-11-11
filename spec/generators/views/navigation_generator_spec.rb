@@ -6,7 +6,7 @@ describe Administrate::Generators::Views::NavigationGenerator, :generator do
   describe "administrate:views:navigation" do
     it "copies the navigation partial into the `admin/application` namespace" do
       expected_contents = contents_for_application_template("_navigation")
-      generated_file = file("app/views/admin/application/_navigation.html.erb")
+      generated_file = file("engines/admin/app/views/admin/application/_navigation.html.erb")
 
       run_generator []
 

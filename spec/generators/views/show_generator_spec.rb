@@ -8,7 +8,7 @@ describe Administrate::Generators::Views::ShowGenerator, :generator do
       expected_contents = contents_for_application_template("show")
 
       run_generator []
-      contents = File.read(file("app/views/admin/application/show.html.erb"))
+      contents = File.read(file("engines/admin/app/views/admin/application/show.html.erb"))
 
       expect(contents).to eq(expected_contents)
     end
@@ -19,7 +19,7 @@ describe Administrate::Generators::Views::ShowGenerator, :generator do
       expected_contents = contents_for_application_template("show")
 
       run_generator ["users"]
-      contents = File.read(file("app/views/admin/users/show.html.erb"))
+      contents = File.read(file("engines/admin/app/views/admin/users/show.html.erb"))
 
       expect(contents).to eq(expected_contents)
     end
